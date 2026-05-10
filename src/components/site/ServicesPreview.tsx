@@ -9,6 +9,9 @@ import {
   ShieldPlus,
 } from "lucide-react";
 
+import rootCanalImg from "../../assets/images/services/root-canal.jpg";
+import implantImg from "../../assets/images/services/implant.jpg";
+
 const services = [
   {
     icon: Bone,
@@ -25,8 +28,7 @@ const services = [
     desc: "Painless single-sitting RCT with rotary endodontics.",
     price: "₹2,000",
     duration: "45 min",
-    image:
-      "https://source.unsplash.com/1200x800/?root+canal,dental",
+    image: rootCanalImg,
   },
   {
     icon: Bone,
@@ -34,8 +36,7 @@ const services = [
     desc: "Permanent tooth replacement with titanium implants.",
     price: "₹15,000",
     duration: "90 min",
-    image:
-      "https://source.unsplash.com/1200x800/?dental+implant,implant",
+    image: implantImg,
   },
   {
     icon: Siren,
