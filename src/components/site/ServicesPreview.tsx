@@ -26,7 +26,7 @@ const services = [
     price: "₹2,000",
     duration: "45 min",
     image:
-      "https://images.unsplash.com/photo-1643660527217-b5e025ac642e?auto=format&fit=crop&w=1200&q=80",
+      "https://source.unsplash.com/1200x800/?root+canal,dental",
   },
   {
     icon: Bone,
@@ -35,7 +35,7 @@ const services = [
     price: "₹15,000",
     duration: "90 min",
     image:
-      "https://images.unsplash.com/photo-1675285657370-541bd9616b85?auto=format&fit=crop&w=1200&q=80",
+      "https://source.unsplash.com/1200x800/?dental+implant,implant",
   },
   {
     icon: Siren,
