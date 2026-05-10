@@ -18,11 +18,17 @@ export function Footer() {
               Trusted by 500+ families for honest care at fair prices.
             </p>
             <div className="flex gap-3">
-              {[Instagram, Facebook, Youtube].map((Icon, i) => (
+              {[
+                { Icon: Instagram, url: "https://www.instagram.com/chhayadentalcare_24?igsh=MWloOW05ajcybmJnZg==", label: "Instagram" },
+                { Icon: Facebook, url: "https://facebook.com", label: "Facebook" },
+                { Icon: Youtube, url: "https://youtube.com", label: "YouTube" },
+              ].map(({ Icon, url, label }, i) => (
                 <a
                   key={i}
-                  href="#"
-                  aria-label="Social link"
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
                   className="size-10 rounded-full glass flex items-center justify-center hover:bg-sky hover:text-ink transition-colors"
                 >
                   <Icon className="size-4" />

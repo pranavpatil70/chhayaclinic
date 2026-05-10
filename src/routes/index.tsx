@@ -7,6 +7,7 @@ import { Stats } from "@/components/site/Stats";
 import { DoctorInfo } from "@/components/site/DoctorInfo";
 import { Testimonials } from "@/components/site/Testimonials";
 import { CTASection } from "@/components/site/CTASection";
+import { Reviews } from "@/components/site/Reviews";
 
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
@@ -84,6 +85,7 @@ function HomePage() {
       <Stats />
       <DoctorInfo />
       <Testimonials />
+      <Reviews />
       <CTASection />
     </SiteShell>
   );

@@ -153,7 +153,7 @@ function BookingPage() {
                 onClick={() => setBookingMode("google")}
                 className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
                   bookingMode === "google"
-                    ? "bg-gradient-to-r from-sky to-bright text-ink shadow-glow"
+                    ? "bg-gradient-to-r from-sky to-bright text-ink shadow-glow ring-1 ring-sky/40"
                     : "text-ice/60 hover:text-ice"
                 }`}
               >
@@ -163,7 +163,7 @@ function BookingPage() {
                 onClick={() => setBookingMode("whatsapp")}
                 className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
                   bookingMode === "whatsapp"
-                    ? "bg-gradient-to-r from-sky to-bright text-ink shadow-glow"
+                    ? "bg-gradient-to-r from-success to-emerald-400 text-white shadow-[0_12px_30px_rgba(34,197,94,0.35)] ring-1 ring-success/40"
                     : "text-ice/60 hover:text-ice"
                 }`}
               >
@@ -195,6 +195,28 @@ function BookingPage() {
           {/* Stepper — only shown in WhatsApp mode */}
           {bookingMode === "whatsapp" && (
           <>
+          <div className="mt-8 rounded-3xl border border-success/20 bg-success/10 px-4 py-4 sm:px-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="flex items-start gap-3">
+              <div className="size-11 rounded-2xl bg-success/20 flex items-center justify-center shrink-0">
+                <MessageCircle className="size-5 text-success" />
+              </div>
+              <div>
+                <p className="font-semibold text-ice">WhatsApp booking is the fastest option</p>
+                <p className="text-sm text-ice/65 mt-1">
+                  Fill the details below and send the request directly to the clinic team.
+                </p>
+              </div>
+            </div>
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-success text-white font-semibold shadow-[0_12px_30px_rgba(34,197,94,0.35)] hover:-translate-y-0.5 transition-all"
+            >
+              <MessageCircle className="size-4" /> Open WhatsApp
+            </a>
+          </div>
+
           {!submitted && (
             <div className="mt-12 flex items-center justify-center gap-3 sm:gap-6">
               {STEPS.map((label, i) => {
@@ -465,7 +487,7 @@ function BookingPage() {
                   <button
                     onClick={handleSubmit}
                     disabled={!canNext}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-success text-ink font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:-translate-y-0.5 transition-all"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-success to-emerald-400 text-white font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:-translate-y-0.5 transition-all shadow-[0_14px_35px_rgba(34,197,94,0.35)]"
                   >
                     <MessageCircle className="size-4" /> Confirm on WhatsApp
                   </button>
