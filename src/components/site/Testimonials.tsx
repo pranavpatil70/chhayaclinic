@@ -78,7 +78,7 @@ export function Testimonials() {
             </h2>
           </div>
           <a
-            href="https://maps.google.com"
+            href="https://maps.app.goo.gl/5HYbMALVA3f2YzkZA"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-royal/15 hover:bg-royal hover:text-ice transition-colors text-sm font-semibold"

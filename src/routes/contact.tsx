@@ -26,7 +26,7 @@ const CLINIC = {
   address:
     "Shop no. 111 Ganesh Park B Wing, Katraj Jakat Naka, Near Bhaji Mandai, Katraj Pune 411046",
   mapsQuery:
-    "https://www.google.com/maps/search/?api=1&query=Shop+No+111+Ganesh+Park+B+Wing+Katraj+Jakat+Naka+Pune+411046",
+    "https://maps.app.goo.gl/5HYbMALVA3f2YzkZA",
 };
 
 type FormState = {
