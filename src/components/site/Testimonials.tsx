@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { CLINIC_MAPS_URL } from "@/data/clinic";
 
 const reviews = [
   {
@@ -78,7 +79,7 @@ export function Testimonials() {
             </h2>
           </div>
           <a
-            href="https://maps.app.goo.gl/5HYbMALVA3f2YzkZA"
+            href={CLINIC_MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-royal/15 hover:bg-royal hover:text-ice transition-colors text-sm font-semibold"

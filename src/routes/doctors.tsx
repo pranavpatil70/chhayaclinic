@@ -11,7 +11,6 @@ import {
 import { SiteShell } from "@/components/site/SiteShell";
 import doctorAruna from "@/assets/doctor-aruna.jpg";
 import doctorRohan from "@/assets/doctor-rohan.jpg";
-import doctorMeera from "@/assets/doctor-meera.jpg";
 
 export const Route = createFileRoute("/doctors")({
   head: () => ({
@@ -43,6 +42,7 @@ const DOCTORS = [
     specialties: ["Implants", "Smile Design", "Crowns & Bridges"],
     languages: ["English", "Hindi", "Marathi"],
     bio: "A decade of crafting confident smiles, with a special love for full-mouth rehabilitation and implants.",
+    accent: true,
   },
   {
     name: "DR. MAHESH SABALE",
@@ -54,17 +54,67 @@ const DOCTORS = [
     specialties: ["Single-sitting RCT", "Wisdom Teeth", "Gum Surgery"],
     languages: ["English", "Hindi", "Marathi"],
     bio: "Demo profile text for the second doctor. Replace with the final treatment focus and experience details when ready.",
+    accent: true,
   },
   {
-    name: "Dr. Meera Joshi",
-    role: "Pediatric & Orthodontist",
-    qual: "Demo Qualification",
-    photo: doctorMeera,
+    name: "Dr. Yogesh Pawar",
+    role: "Dental Surgeon",
+    qual: "B.D.S",
+    photo: doctorRohan,
     years: 6,
-    rating: 5.0,
-    specialties: ["Clear Aligners", "Braces", "Kids Dentistry"],
-    languages: ["English", "Hindi", "Marathi", "Gujarati"],
-    bio: "Demo profile text for the third doctor. Replace with the final specialization and background details when ready.",
+    rating: 4.8,
+    specialties: ["General Dentistry", "Fillings", "Extractions"],
+    languages: ["English", "Hindi", "Marathi"],
+    bio: "Gentle dental surgeon with a focus on patient comfort and conservative care.",
+    accent: true,
+  },
+  {
+    name: "Dr. Shantanu Harale",
+    role: "Dental Surgeon",
+    qual: "B.D.S",
+    photo: doctorAruna,
+    years: 5,
+    rating: 4.7,
+    specialties: ["Restorative Dentistry", "Cosmetic Dentistry"],
+    languages: ["English", "Hindi", "Marathi"],
+    bio: "Provides comprehensive dental care with attention to aesthetics and function.",
+    accent: true,
+  },
+  {
+    name: "Dr. Vijay Ganesh",
+    role: "Endodontist",
+    qual: "M.D.S",
+    photo: doctorRohan,
+    years: 8,
+    rating: 4.9,
+    specialties: ["Root Canal Treatment", "Endodontic Microsurgery"],
+    languages: ["English", "Hindi", "Marathi"],
+    bio: "Specialist in complex endodontic procedures and pain-free root canals.",
+    accent: true,
+  },
+  {
+    name: "Dr. Maya Shinde",
+    role: "Pedodontist",
+    qual: "M.D.S",
+    photo: doctorAruna,
+    years: 7,
+    rating: 4.8,
+    specialties: ["Pediatric Dentistry", "Behavior Management"],
+    languages: ["English", "Hindi", "Marathi"],
+    bio: "Child-friendly dentist focused on preventive care and early intervention.",
+    accent: true,
+  },
+  {
+    name: "Dr. Dnyanesh Chitte",
+    role: "Oral & Maxillofacial Surgeon",
+    qual: "M.D.S",
+    photo: doctorRohan,
+    years: 9,
+    rating: 4.9,
+    specialties: ["Oral Surgery", "Impacted Teeth", "Facial Trauma"],
+    languages: ["English", "Hindi", "Marathi"],
+    bio: "Experienced surgeon handling complex oral and maxillofacial cases.",
+    accent: true,
   },
 ];
 
@@ -137,15 +187,15 @@ function DoctorsPage() {
                 </div>
 
                 <div className="p-6 space-y-4 flex-1 flex flex-col">
-                  <div className="flex items-start gap-2 text-xs text-ice/70">
+                  <div className={`flex items-start gap-2 text-xs ${d.accent ? "text-sky" : "text-ice/70"}`}>
                     <GraduationCap className="size-4 shrink-0 text-sky mt-0.5" />
                     <span>{d.qual}</span>
                   </div>
-                  <div className="flex items-start gap-2 text-xs text-ice/70">
+                  <div className={`flex items-start gap-2 text-xs ${d.accent ? "text-sky" : "text-ice/70"}`}>
                     <Award className="size-4 shrink-0 text-sky mt-0.5" />
                     <span>{d.years} years of practice</span>
                   </div>
-                  <div className="flex items-start gap-2 text-xs text-ice/70">
+                  <div className={`flex items-start gap-2 text-xs ${d.accent ? "text-sky" : "text-ice/70"}`}>
                     <Languages className="size-4 shrink-0 text-sky mt-0.5" />
                     <span>{d.languages.join(" · ")}</span>
                   </div>
@@ -161,11 +211,11 @@ function DoctorsPage() {
                     ))}
                   </div>
 
-                  <p className="text-sm text-ice/65 leading-relaxed">{d.bio}</p>
+                  <p className={`text-sm leading-relaxed ${d.accent ? "text-sky" : "text-ice/65"}`}>{d.bio}</p>
 
                   <Link
                     to="/booking"
-                    className="mt-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-ice/5 hover:bg-gradient-to-r hover:from-sky hover:to-bright hover:text-ink text-ice font-semibold text-sm transition-all"
+                    className={`mt-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-ice/5 hover:bg-gradient-to-r hover:from-sky hover:to-bright hover:text-ink ${d.accent ? "text-sky" : "text-ice"} font-semibold text-sm transition-all`}
                   >
                     Book with {d.name.split(" ")[1]}
                     <ArrowRight className="size-4" />

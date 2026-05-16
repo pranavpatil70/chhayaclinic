@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Play, Star, ShieldCheck, Sparkles, MapPin } from "lucide-react";
-import heroSmile from "@/assets/hero-smile.jpg";
+import chayya3 from "@/assets/chayya 3.jpeg";
 import doctorAruna from "@/assets/doctor-aruna.jpg";
+import { CLINIC_MAPS_URL } from "@/data/clinic";
 
 export function Hero() {
   return (
@@ -81,7 +82,9 @@ export function Hero() {
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700" />
               </Link>
               <a
-                href="#location"
+                href={CLINIC_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-white border border-royal/10 text-ink font-medium hover:border-bright/30 hover:shadow-soft transition-all"
               >
                 <span className="size-9 rounded-full bg-bright/10 text-bright flex items-center justify-center group-hover:bg-bright group-hover:text-ice transition-colors">
@@ -139,11 +142,15 @@ export function Hero() {
               {/* Frame */}
               <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden bg-white border border-royal/10 shadow-deep">
                 <img
-                  src={heroSmile}
-                  alt="Confident smile after dental treatment at Chhaya Clinic"
+                  src={chayya3}
+                  alt="Chhaya Clinic interior"
                   width={1024}
                   height={1280}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover cursor-pointer"
+                  onClick={() => {
+                    // navigate to gallery
+                    window.location.href = "/gallery";
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent" />
 
@@ -171,6 +178,7 @@ export function Hero() {
                 </div>
               </div>
 
+                {/* Thumbnails removed per request */}
               {/* Floating: next slot */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
