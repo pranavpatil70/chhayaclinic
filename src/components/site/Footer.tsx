@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Instagram, Facebook, Youtube } from "lucide-react";
 import { Logo } from "./Logo";
+import { CLINIC_MAPS_URL } from "@/data/clinic";
 
 export function Footer() {
   return (
@@ -133,18 +134,30 @@ export function Footer() {
         </div>
 
         {/* Map Section */}
-        <div id="location" className="mt-12 rounded-2xl overflow-hidden glass h-[300px] border border-ice/10 w-full relative">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15137.935745778846!2d73.8567!3d18.4533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDI3JzExLjkiTiA3M8KwNTEnMjQuMSJF!5e0!3m2!1sen!2sin!4v1714152528821!5m2!1sen!2sin" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen={true} 
-            loading="lazy" 
+        <a
+          id="location"
+          href={CLINIC_MAPS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-12 rounded-2xl overflow-hidden glass h-[300px] border border-ice/10 w-full relative block group"
+          aria-label="Open Chhaya Clinic location in Google Maps"
+        >
+          <iframe
+            title="Chhaya Clinic location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15137.935745778846!2d73.8567!3d18.4533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDI3JzExLjkiTiA3M8KwNTEnMjQuMSJF!5e0!3m2!1sen!2sin!4v1714152528821!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="absolute inset-0 grayscale contrast-100 hover:grayscale-0 transition-all duration-500"
+            className="absolute inset-0 grayscale contrast-100 group-hover:grayscale-0 transition-all duration-500 pointer-events-none"
           ></iframe>
-        </div>
+          <div className="absolute inset-x-3 bottom-3 px-4 py-3 rounded-xl bg-ink/75 text-ice flex items-center justify-between backdrop-blur-sm border border-white/15">
+            <span className="text-sm font-semibold">Open in Google Maps</span>
+            <span className="text-xs uppercase tracking-[0.18em] text-sky">Directions</span>
+          </div>
+        </a>
 
         <div className="mt-16 pt-8 border-t border-ice/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ice/50">
           <p>© {new Date().getFullYear()} Chhaya Clinic & Dental Care. All rights reserved.</p>

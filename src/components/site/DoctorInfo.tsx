@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { BadgeCheck, Clock3, MapPin, Phone, Sparkles, ArrowRight } from "lucide-react";
 import doctorAruna from "@/assets/doctor-aruna.jpg";
+import { CLINIC_MAPS_URL } from "@/data/clinic";
 
 const highlights = [
   "B.D.S (M.U.H.S)",
@@ -96,7 +97,9 @@ export function DoctorInfo() {
                 Book an Appointment <ArrowRight className="w-5 h-5" />
               </Link>
               <a
-                href="#location"
+                href={CLINIC_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 hover:shadow-sm transition-all w-full sm:w-auto"
               >
                 Get the Location <ArrowRight className="w-5 h-5 text-slate-400" />

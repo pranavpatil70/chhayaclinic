@@ -3,13 +3,9 @@ import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, ArrowLeft, ArrowRight } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
-import clinicInterior from "@/assets/clinic-interior.jpg";
-import galleryChair from "@/assets/gallery-chair.jpg";
-import gallerySterilization from "@/assets/gallery-sterilization.jpg";
-import galleryReception from "@/assets/gallery-reception.jpg";
-import galleryKid from "@/assets/gallery-kid.jpg";
-import galleryXray from "@/assets/gallery-xray.jpg";
-import heroSmile from "@/assets/hero-smile.jpg";
+import chayya1 from "@/assets/chayya 1.jpeg";
+import chayya2 from "@/assets/chayya 2.jpeg";
+import chayya3 from "@/assets/chayya 3.jpeg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -33,13 +29,9 @@ export const Route = createFileRoute("/gallery")({
 type Cat = "all" | "clinic" | "equipment" | "smiles";
 
 const ITEMS: { src: string; alt: string; cat: Exclude<Cat, "all">; tall?: boolean }[] = [
-  { src: galleryReception, alt: "Reception area at Chhaya Clinic", cat: "clinic" },
-  { src: galleryChair, alt: "Treatment chair in calm blue room", cat: "clinic", tall: true },
-  { src: clinicInterior, alt: "Clinic interior, Katraj Pune", cat: "clinic" },
-  { src: gallerySterilization, alt: "Sterilisation suite", cat: "equipment" },
-  { src: galleryXray, alt: "Digital X-ray equipment", cat: "equipment", tall: true },
-  { src: heroSmile, alt: "Patient with confident new smile", cat: "smiles", tall: true },
-  { src: galleryKid, alt: "Happy young patient after treatment", cat: "smiles" },
+  { src: chayya1, alt: "Chhaya Clinic — Interior 1", cat: "clinic", tall: true },
+  { src: chayya2, alt: "Chhaya Clinic — Interior 2", cat: "clinic" },
+  { src: chayya3, alt: "Chhaya Clinic — Interior 3", cat: "clinic" },
 ];
 
 const CATS: { value: Cat; label: string }[] = [

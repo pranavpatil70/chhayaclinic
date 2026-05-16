@@ -17,6 +17,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
+import { CLINIC_MAPS_URL } from "@/data/clinic";
 
 const CLINIC = {
   phoneRaw: "9921498104",
@@ -25,8 +26,6 @@ const CLINIC = {
   email: "chhayaclinic007@gmail.com",
   address:
     "Shop no. 111 Ganesh Park B Wing, Katraj Jakat Naka, Near Bhaji Mandai, Katraj Pune 411046",
-  mapsQuery:
-    "https://maps.app.goo.gl/5HYbMALVA3f2YzkZA",
 };
 
 type FormState = {
@@ -97,7 +96,7 @@ function ContactPage() {
         icon: <MapPin className="size-5" />,
         title: "Directions",
         value: "Katraj, Pune 411046",
-        href: CLINIC.mapsQuery,
+        href: CLINIC_MAPS_URL,
         cta: "Open maps",
       },
     ],
@@ -231,7 +230,7 @@ function ContactPage() {
                   <MessageCircle className="size-4" /> WhatsApp
                 </a>
                 <a
-                  href={CLINIC.mapsQuery}
+                  href={CLINIC_MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 text-ice/90 text-sm hover:bg-white/5 transition-colors"
@@ -403,7 +402,7 @@ function ContactPage() {
 
             <div className="rounded-[28px] glass-light p-4 border border-royal/10 shadow-soft">
               <a
-                href={CLINIC.mapsQuery}
+                href={CLINIC_MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group relative rounded-2xl overflow-hidden aspect-[4/3] border border-royal/10"
@@ -419,6 +418,18 @@ function ContactPage() {
                   <ArrowRight className="size-4 text-sky" />
                 </div>
               </a>
+
+              <div className="mt-3">
+                <a
+                    href={CLINIC_MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-sky to-bright text-ink font-semibold text-sm shadow-sm hover:brightness-95 transition-colors"
+                >
+                  <Navigation className="size-4" />
+                  Get directions
+                </a>
+              </div>
 
               <div className="mt-4 grid sm:grid-cols-2 gap-2">
                 <button
