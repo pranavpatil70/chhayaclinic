@@ -2,13 +2,51 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { ServicesGrid } from "@/components/site/ServicesGrid";
 import { PROCEDURES, FACILITIES } from "@/data/services";
+import logoImg from "@/assets/new changes/logo1.jpeg";
 import {
   ArrowRight,
   BadgeCheck,
   CalendarClock,
   Clock3,
   Stethoscope,
+  Building2,
+  Crown,
+  AlignJustify,
+  LayoutGrid,
+  Sparkles,
+  Zap,
+  Bone,
+  Layers,
+  Scissors,
+  Cpu,
+  Wrench,
+  Users,
+  CalendarCheck,
+  type LucideIcon,
 } from "lucide-react";
+
+const PROCEDURE_ICONS: Record<string, LucideIcon> = {
+  "Ceramic Bridges": Crown,
+  "Hybrid Dentures": AlignJustify,
+  "Dental Braces": LayoutGrid,
+  "Dental Bleaching": Sparkles,
+  "3M Lava Crowns": Crown,
+  "Laser RCT (Root Canal)": Zap,
+  "Dental Bone Graft": Bone,
+  "Cast Partial Denture": Layers,
+  "Dental and Surgical Extractions": Scissors,
+  "Dental Laser": Zap,
+  "Dental Ceramic Crown": Crown,
+  "Zirconia Bridges": Crown,
+  "CAD-CAM Dental Restorations": Cpu,
+  "Dental Braces Fixing": Wrench,
+};
+
+const FACILITY_ICONS: Record<string, LucideIcon> = {
+  "Dental OPD": Stethoscope,
+  "Corporate Dental Camps": Users,
+  "Online Appointments": CalendarCheck,
+};
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -56,31 +94,94 @@ function ServicesPage() {
         </section>
 
         {/* PROCEDURES & FACILITIES */}
-        <section className="py-12 bg-white border-y border-slate-200">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Treatments & Procedures</h3>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {PROCEDURES.map((p) => (
-                    <li key={p} className="flex items-center gap-3 text-slate-700">
-                      <span className="text-green-600">✓</span>
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-5 lg:px-8">
+
+            {/* Logo + heading */}
+            <div className="flex flex-col items-center text-center mb-14">
+              <img
+                src={logoImg}
+                alt="Chhaya Clinic logo"
+                className="size-20 rounded-2xl object-contain mb-5 shadow-soft"
+              />
+              <span className="text-bright font-semibold tracking-[0.2em] uppercase text-[11px] mb-2">
+                What we offer
+              </span>
+              <h2 className="font-display text-3xl lg:text-5xl font-light tracking-tighter text-ink">
+                Treatments &amp; <span className="italic text-bright">Facilities</span>
+              </h2>
+              <p className="mt-3 text-ink/50 max-w-md text-sm leading-relaxed">
+                {PROCEDURES.length} specialized procedures · all under one roof
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-6">
+
+              {/* Procedures — 2 cols */}
+              <div className="lg:col-span-2 rounded-3xl border border-royal/10 bg-ice p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="size-9 rounded-xl bg-royal/8 flex items-center justify-center shrink-0">
+                    <BadgeCheck className="size-4 text-royal" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-base font-semibold text-ink">Treatments &amp; Procedures</h3>
+                    <p className="text-[11px] text-ink/40 uppercase tracking-widest">{PROCEDURES.length} available</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {PROCEDURES.map((p) => {
+                    const Icon = PROCEDURE_ICONS[p] ?? BadgeCheck;
+                    return (
+                      <div
+                        key={p}
+                        className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white border border-royal/8 hover:border-bright/30 hover:bg-bright/5 transition-all duration-200 group cursor-default"
+                      >
+                        <div className="size-8 rounded-xl bg-royal/6 flex items-center justify-center shrink-0 group-hover:bg-bright/10 transition-colors">
+                          <Icon className="size-4 text-royal group-hover:text-bright transition-colors" />
+                        </div>
+                        <span className="text-sm text-ink/70 font-medium group-hover:text-ink transition-colors leading-snug">{p}</span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Facilities</h3>
-                <ul className="space-y-3 text-slate-700">
-                  {FACILITIES.map((f) => (
-                    <li key={f} className="flex items-center gap-3">
-                      <span className="text-green-600">✓</span>
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
+
+              {/* Facilities — 1 col */}
+              <div className="rounded-3xl border border-royal/10 bg-ice p-8 flex flex-col">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="size-9 rounded-xl bg-royal/8 flex items-center justify-center shrink-0">
+                    <Building2 className="size-4 text-royal" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-base font-semibold text-ink">Facilities</h3>
+                    <p className="text-[11px] text-ink/40 uppercase tracking-widest">{FACILITIES.length} on-site</p>
+                  </div>
+                </div>
+                <div className="space-y-2.5 flex-1">
+                  {FACILITIES.map((f) => {
+                    const Icon = FACILITY_ICONS[f] ?? BadgeCheck;
+                    return (
+                      <div
+                        key={f}
+                        className="flex items-center gap-3 px-4 py-4 rounded-2xl bg-white border border-royal/8 hover:border-bright/30 hover:bg-bright/5 transition-all duration-200 group"
+                      >
+                        <div className="size-9 rounded-xl bg-royal/6 flex items-center justify-center shrink-0 group-hover:bg-bright/10 transition-colors">
+                          <Icon className="size-4 text-royal group-hover:text-bright transition-colors" />
+                        </div>
+                        <span className="text-sm text-ink/70 font-medium group-hover:text-ink transition-colors">{f}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+                <Link
+                  to="/booking"
+                  className="mt-6 flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl bg-royal text-white font-semibold text-sm hover:bg-bright transition-colors"
+                >
+                  Book Appointment
+                  <ArrowRight className="size-4" />
+                </Link>
               </div>
+
             </div>
           </div>
         </section>

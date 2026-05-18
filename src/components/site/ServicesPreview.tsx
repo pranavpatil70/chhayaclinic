@@ -11,8 +11,13 @@ import {
   Baby,
 } from "lucide-react";
 
-import rootCanalImg from "../../assets/images/services/root-canal.jpg";
-import implantImg from "../../assets/images/services/implant.jpg";
+import rootCanalImg from "../../assets/root canal.webp";
+import implantImg from "../../assets/Implants.webp";
+import crownBridgeImg from "../../assets/dental crowns and  bridges.webp";
+import scalingPolishingImg from "../../assets/checkup  and cleaning.webp";
+import wisdomToothImg from "../../assets/wisdom tooth.webp";
+import orthodonticsImg from "../../assets/orthodonist.webp";
+import kidsDentistryImg from "../../assets/gallery-kid.jpg";
 import { SERVICES } from "@/data/services";
 
 const services = [
@@ -22,8 +27,7 @@ const services = [
     desc: "Custom zirconia and PFM crowns to restore strength, function, and smile aesthetics.",
     price: "₹5,500",
     duration: "2 visits",
-    image:
-      "https://images.unsplash.com/photo-1675516030465-e2ad117e870f?auto=format&fit=crop&w=1200&q=80",
+    image: crownBridgeImg,
   },
   {
     icon: Stethoscope,
@@ -56,8 +60,7 @@ const services = [
     desc: "Atraumatic extraction for impacted wisdom teeth with minimal discomfort.",
     price: "₹3,500",
     duration: "30-45 min",
-    image:
-      "https://images.unsplash.com/photo-1522849696084-818b29dfe210?auto=format&fit=crop&w=1200&q=80",
+    image: wisdomToothImg,
   },
   {
     icon: ShieldPlus,
@@ -65,8 +68,7 @@ const services = [
     desc: "Routine ultrasonic scaling and oral health review.",
     price: "₹200",
     duration: "30 min",
-    image:
-      "https://images.unsplash.com/photo-1766338390573-ec092d69cdcb?auto=format&fit=crop&w=1200&q=80",
+    image: scalingPolishingImg,
   },
   {
     icon: AlignJustify,
@@ -74,8 +76,7 @@ const services = [
     desc: "Metal braces, ceramic braces and clear aligners to straighten teeth and correct bite.",
     price: "₹22,000",
     duration: "12–24 months",
-    image:
-      "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=80",
+    image: orthodonticsImg,
   },
   {
     icon: Baby,
@@ -83,8 +84,7 @@ const services = [
     desc: "Gentle, child-friendly dental care including fluoride treatment, sealants and habit counselling.",
     price: "₹500",
     duration: "30 min",
-    image:
-      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
+    image: kidsDentistryImg,
   },
 ];
 
@@ -150,15 +150,7 @@ export function ServicesPreview() {
                   {s.desc}
                 </p>
 
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-2">
-                    <span className="px-3 py-1 rounded-full bg-royal/5 text-royal text-xs font-semibold">
-                      from {s.price}
-                    </span>
-                    <span className="px-3 py-1 rounded-full bg-sky/10 text-bright text-xs font-medium">
-                      {s.duration}
-                    </span>
-                  </div>
+                <div className="flex items-center justify-end">
                   <Link
                     to="/booking"
                     className="size-9 rounded-full bg-ink text-ice flex items-center justify-center hover:bg-bright transition-colors"

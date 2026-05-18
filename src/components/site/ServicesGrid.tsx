@@ -3,32 +3,40 @@ import { Link } from "@tanstack/react-router";
 import * as Icons from "lucide-react";
 import { ArrowRight, Flame } from "lucide-react";
 import { CATEGORIES, SERVICES, type ServiceCategory } from "@/data/services";
+import consultationImg from "@/assets/images/services/consultation.jpg";
+import toothFillingImg from "@/assets/images/services/tooth-filling.jpg";
+import scalingPolishingImg from "@/assets/checkup  and cleaning.webp";
+import rootCanalImg from "@/assets/root canal.webp";
+import crownBridgeImg from "@/assets/dental crowns and  bridges.webp";
+import implantImg from "@/assets/Implants.webp";
+import wisdomToothImg from "@/assets/wisdom tooth.webp";
+import orthodonticsImg from "@/assets/orthodonist.webp";
+import kidsDentistryImg from "@/assets/gallery-kid.jpg";
 
 type Filter = ServiceCategory | "all";
 
 const U = (id: string) =>
   `https://images.unsplash.com/${id}?w=1200&h=800&fit=crop&q=85&auto=format`;
 
-// All 18 services — curated Unsplash photos, free for commercial use
 const serviceImages: Record<string, string> = {
-  consultation:        U("photo-1606811842243-af7e16970c1f"), // dentist with patient
-  "scaling-polishing": U("photo-1698749778813-ad5f2814e50f"), // dental cleaning tools
-  "tooth-filling":     U("photo-1588776814546-daab30f310ce"), // dental procedure
-  "root-canal":        U("photo-1643292116094-bd2fb3ed4d64"), // endodontic files
-  "crown-bridge":      U("photo-1663755787934-3742b0f5983a"), // dental clinic work
-  "dental-implants":   U("photo-1609918438269-9a4c5f8fe3a4"), // implant model
-  "teeth-whitening":   U("photo-1489278353717-f64c6ee8a4d2"), // bright white smile
-  veneers:             U("photo-1690167687106-180b0ea1d813"), // cosmetic dentistry
-  "smile-design":      U("photo-1677026010083-78ec7f1b84ed"), // confident smile
-  braces:              U("photo-1598256989809-394fa4f6cd26"), // silver braces close-up
-  aligners:            U("photo-1651180352574-669683817463"), // clear aligner trays
-  "wisdom-tooth":      U("photo-1619988252418-a1e6ee10b122"), // tooth extraction
-  "gum-treatment":     U("photo-1606811951341-756fdd437682"), // dental hygiene
-  "kids-dentistry":    U("photo-1619236233405-bb5d430f0620"), // child at dentist
-  "fluoride-sealants": U("photo-1606811841689-23dfddce3e95"), // fluoride dental
-  dentures:            U("photo-1620775997990-ee3c25938b4c"), // dental prosthetics
-  "digital-xray":      U("photo-1522849696084-818b29dfe210"), // dental X-ray machine
-  emergency:           U("photo-1758206524132-72a2aa6639e2"), // dental clinic urgent
+  consultation:        consultationImg,
+  "scaling-polishing": scalingPolishingImg,
+  "tooth-filling":     toothFillingImg,
+  "root-canal":        rootCanalImg,
+  "crown-bridge":      crownBridgeImg,
+  "dental-implants":   implantImg,
+  "teeth-whitening":   U("photo-1489278353717-f64c6ee8a4d2"),
+  veneers:             U("photo-1690167687106-180b0ea1d813"),
+  "smile-design":      U("photo-1677026010083-78ec7f1b84ed"),
+  braces:              orthodonticsImg,
+  aligners:            orthodonticsImg,
+  "wisdom-tooth":      wisdomToothImg,
+  "gum-treatment":     U("photo-1606811951341-756fdd437682"),
+  "kids-dentistry":    kidsDentistryImg,
+  "fluoride-sealants": U("photo-1606811841689-23dfddce3e95"),
+  dentures:            U("photo-1620775997990-ee3c25938b4c"),
+  "digital-xray":      U("photo-1522849696084-818b29dfe210"),
+  emergency:           U("photo-1758206524132-72a2aa6639e2"),
 };
 
 export function ServicesGrid() {

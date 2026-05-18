@@ -3,9 +3,16 @@ import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, ArrowLeft, ArrowRight } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
-import chayya1 from "@/assets/chayya 1.jpeg";
-import chayya2 from "@/assets/chayya 2.jpeg";
-import chayya3 from "@/assets/chayya 3.jpeg";
+import gallery1 from "@/assets/gallery/IMG_7473.JPG.jpeg";
+import gallery2 from "@/assets/gallery/IMG_7490.JPG.jpeg";
+import gallery3 from "@/assets/gallery/IMG_7500.JPG.jpeg";
+import gallery4 from "@/assets/gallery/IMG_7506.JPG.jpeg";
+import gallery5 from "@/assets/gallery/IMG_7511.JPG.jpeg";
+import gallery6 from "@/assets/gallery/IMG_7570.JPG.jpeg";
+import gallery7 from "@/assets/gallery/IMG_7576.JPG.jpeg";
+import gallery8 from "@/assets/gallery/IMG_7601.JPG.jpeg";
+import gallery9 from "@/assets/gallery/IMG_7606.JPG.jpeg";
+import gallery10 from "@/assets/gallery/IMG_7607.JPG.jpeg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -26,19 +33,24 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
 });
 
-type Cat = "all" | "clinic" | "equipment" | "smiles";
+type Cat = "all" | "clinic";
 
 const ITEMS: { src: string; alt: string; cat: Exclude<Cat, "all">; tall?: boolean }[] = [
-  { src: chayya1, alt: "Chhaya Clinic — Interior 1", cat: "clinic", tall: true },
-  { src: chayya2, alt: "Chhaya Clinic — Interior 2", cat: "clinic" },
-  { src: chayya3, alt: "Chhaya Clinic — Interior 3", cat: "clinic" },
+  { src: gallery1,  alt: "Chhaya Clinic — Interior 1",  cat: "clinic", tall: true },
+  { src: gallery2,  alt: "Chhaya Clinic — Interior 2",  cat: "clinic" },
+  { src: gallery3,  alt: "Chhaya Clinic — Interior 3",  cat: "clinic" },
+  { src: gallery4,  alt: "Chhaya Clinic — Interior 4",  cat: "clinic", tall: true },
+  { src: gallery5,  alt: "Chhaya Clinic — Interior 5",  cat: "clinic" },
+  { src: gallery6,  alt: "Chhaya Clinic — Interior 6",  cat: "clinic" },
+  { src: gallery7,  alt: "Chhaya Clinic — Interior 7",  cat: "clinic", tall: true },
+  { src: gallery8,  alt: "Chhaya Clinic — Interior 8",  cat: "clinic" },
+  { src: gallery9,  alt: "Chhaya Clinic — Interior 9",  cat: "clinic" },
+  { src: gallery10, alt: "Chhaya Clinic — Interior 10", cat: "clinic", tall: true },
 ];
 
 const CATS: { value: Cat; label: string }[] = [
   { value: "all", label: "All" },
   { value: "clinic", label: "Clinic" },
-  { value: "equipment", label: "Equipment" },
-  { value: "smiles", label: "Smiles" },
 ];
 
 function GalleryPage() {
@@ -76,7 +88,7 @@ function GalleryPage() {
             Step into our{" "}
             <span className="italic text-sky">clinic</span>.
           </h1>
-          <p className="mt-6 text-lg text-ice/70 max-w-xl leading-relaxed font-light">
+          <p className="mt-6 text-lg text-ink/70 max-w-xl leading-relaxed font-light">
             Spotless rooms, premium equipment, and the warm faces you'll meet
             at every visit.
           </p>
@@ -93,7 +105,7 @@ function GalleryPage() {
                 key={c.value}
                 onClick={() => setCat(c.value)}
                 className={`relative px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors ${
-                  active ? "text-ink" : "text-ice/60 hover:text-ice border border-ice/15"
+                  active ? "text-ink" : "text-ink/60 hover:text-ink border border-ink/15"
                 }`}
               >
                 {active && (

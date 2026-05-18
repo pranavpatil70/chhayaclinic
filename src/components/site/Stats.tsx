@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 const stats = [
   { value: 2600, suffix: "+", label: "Happy Patients" },
   { value: 4.8, suffix: "★", label: "Average Rating", decimals: 1 },
-  { value: 10, suffix: "+", label: "Years Experience" },
+  { value: 11, suffix: "+", label: "Years Experience" },
   { value: 18, suffix: "", label: "Treatments" },
   { value: 98, suffix: "%", label: "Satisfaction" },
 ];

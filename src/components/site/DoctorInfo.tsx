@@ -4,7 +4,7 @@ import doctorAruna from "@/assets/Dr. Rakhi Sabale.png";
 import { CLINIC_MAPS_URL } from "@/data/clinic";
 
 const highlights = [
-  "B.D.S (M.U.H.S)",
+  "B.D.S — Dental Surgeon",
   "Gentle family dentistry",
   "Modern, painless treatment planning",
 ];
@@ -20,7 +20,7 @@ export function DoctorInfo() {
                 <div className="aspect-[4/5] overflow-hidden">
                   <img
                     src={doctorAruna}
-                    alt="DR. RAKHI MAHESH SABALE B.D.S (M.U.H.S ) AND DENTAL SURGEON"
+                    alt="DR. RAKHI MAHESH SABALE B.D.S AND DENTAL SURGEON"
                     loading="lazy"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
@@ -30,7 +30,7 @@ export function DoctorInfo() {
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent p-6 pt-20">
                 <p className="text-white font-bold text-xl tracking-tight">DR. RAKHI MAHESH SABALE</p>
-                <p className="text-blue-200 text-sm mt-1 font-medium">B.D.S (M.U.H.S ) AND DENTAL SURGEON</p>
+                <p className="text-blue-200 text-sm mt-1 font-medium">B.D.S AND DENTAL SURGEON</p>
               </div>
             </div>
             
