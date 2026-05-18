@@ -2,7 +2,7 @@ import { ShieldCheck, BadgeCheck, Award, CalendarCheck2 } from "lucide-react";
 
 const items = [
   { icon: ShieldCheck, title: "100% Sterilized", sub: "Hospital-grade hygiene" },
-  { icon: BadgeCheck, title: "Registered with Maharashtra State Dental Council", sub: "State-registered specialists" },
+  { icon: BadgeCheck, title: "Registered with Maharashtra State Dental Council", sub: "Registration no. - A-34905" },
   { icon: Award, title: "Google Verified", sub: "4.8★ on Google" },
   { icon: CalendarCheck2, title: "Same-Day Consultations", sub: "Book urgent appointments" },
 ];

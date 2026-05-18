@@ -16,7 +16,7 @@ export function Footer() {
             <Logo variant="light" />
             <p className="text-sm leading-relaxed text-ice/60 max-w-sm">
               Chhaya Clinic & Dental Care is Katraj's most-loved dental practice.
-              Trusted by 500+ families for honest care at fair prices.
+              Trusted by 2600+ families for honest care at fair prices.
             </p>
             <div className="flex gap-3">
               {[

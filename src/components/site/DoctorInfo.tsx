@@ -2,6 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { BadgeCheck, Clock3, MapPin, Phone, Sparkles, ArrowRight } from "lucide-react";
 import doctorAruna from "@/assets/Dr. Rakhi Sabale.png";
 import { CLINIC_MAPS_URL } from "@/data/clinic";
+import { ALL_DOCTORS } from "@/data/doctors";
+import { DoctorCard } from "@/components/site/DoctorCard";
 
 const highlights = [
   "B.D.S — Dental Surgeon",
@@ -13,6 +15,13 @@ export function DoctorInfo() {
   return (
     <section className="py-20 lg:py-32 bg-slate-50 border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Section heading */}
+        <div className="mb-16">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Meet Our Doctors And Specialists Team
+          </h2>
+        </div>
+
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* LEFT: DOCTOR IMAGE */}
           <div className="lg:col-span-4">
@@ -73,7 +82,14 @@ export function DoctorInfo() {
                 {
                   icon: MapPin,
                   title: "Visit the clinic",
-                  desc: "Shop no. 111 Ganesh Park B Wing, Katraj Jakat Naka, Near Bhaji Mandai, Pune 411046"
+                  desc: "Shop no. 111 Ganesh Park B Wing\nKatraj Jakat Naka\nNear Bhaji Mandai\nPune 411046"
+                },
+                {
+                  icon: MapPin,
+                  title: "Find directions",
+                  desc: "Open Google Maps to get step-by-step driving directions to the clinic.",
+                  href: CLINIC_MAPS_URL,
+                  button: "Get directions"
                 },
                 {
                   icon: Phone,
@@ -87,6 +103,16 @@ export function DoctorInfo() {
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">{info.title}</h3>
                   <p className="text-slate-600 whitespace-pre-line leading-relaxed">{info.desc}</p>
+                  {info.href ? (
+                    <a
+                      href={info.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 transition-colors"
+                    >
+                      {info.button ?? "Get directions"}
+                    </a>
+                  ) : null}
                 </div>
               ))}
             </div>
@@ -108,6 +134,26 @@ export function DoctorInfo() {
               </a>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-16">
+        <div className="max-w-3xl">
+          <span className="inline-block py-1.5 px-4 rounded-full bg-blue-100 text-blue-700 text-sm font-bold tracking-widest uppercase mb-4">
+            Our dental team
+          </span>
+          <h3 className="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Meet the rest of the team.
+          </h3>
+          <p className="mt-3 text-slate-600 max-w-2xl leading-relaxed">
+            All the other specialists from our doctors page are listed here as well, so you can choose the right dentist without leaving the homepage.
+          </p>
+        </div>
+
+        <div className="mt-8 space-y-8">
+          {ALL_DOCTORS.filter((doctor) => !doctor.isChief).map((doctor, i) => (
+            <DoctorCard key={doctor.name} doctor={doctor} index={i} />
+          ))}
         </div>
       </div>
     </section>

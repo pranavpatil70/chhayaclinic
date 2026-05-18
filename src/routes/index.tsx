@@ -81,9 +81,9 @@ function HomePage() {
     <SiteShell>
       <Hero />
       <TrustStrip />
+      <DoctorInfo />
       <ServicesPreview />
       <Stats />
-      <DoctorInfo />
       <Testimonials />
       <FAQ />
       <CTASection />

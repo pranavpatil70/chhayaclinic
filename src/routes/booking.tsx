@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 const GCAL_URL =
-  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2ZheCrLIaWKNResM9ScqDeQ2K91Qpc1wkxin7fRtBnQQACFxnxYJWrWri51SmWt_I_dLcEogjK?gv=true";
+  "https://calendar.app.google/Q5hZAhjH71oHEeW78";
 import { z } from "zod";
 import { SiteShell } from "@/components/site/SiteShell";
 import { SERVICES } from "@/data/services";

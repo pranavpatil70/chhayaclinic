@@ -64,7 +64,7 @@ const services = [
   },
   {
     icon: ShieldPlus,
-    name: "Checkup & Cleaning",
+    name: "Checkup & Scaling",
     desc: "Routine ultrasonic scaling and oral health review.",
     price: "₹200",
     duration: "30 min",
@@ -80,7 +80,7 @@ const services = [
   },
   {
     icon: Baby,
-    name: "Pediadentist (Kids Dentistry)",
+    name: "Pediatric Dentistry",
     desc: "Gentle, child-friendly dental care including fluoride treatment, sealants and habit counselling.",
     price: "₹500",
     duration: "30 min",
