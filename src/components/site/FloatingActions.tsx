@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowUp, CalendarDays, Phone } from "lucide-react";
+import { ArrowUp, CalendarDays, Phone, CheckCircle2, X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
 } from "@/components/ui/dialog";
 
 export function FloatingActions() {
@@ -35,48 +31,79 @@ export function FloatingActions() {
   return (
     <>
       <Dialog open={bookingOpen} onOpenChange={setBookingOpen}>
-        <DialogContent className="sm:max-w-md rounded-3xl border-royal/10 bg-white/95 backdrop-blur-xl shadow-deep">
-          <DialogHeader className="text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bright/10 text-bright text-[10px] font-bold uppercase tracking-[0.18em] w-fit mb-3">
-              <CalendarDays className="size-3.5" />
-              Appointment Booking
-            </div>
-            <DialogTitle className="text-2xl font-display text-ink">
-              Need to book a dental visit?
-            </DialogTitle>
-            <DialogDescription className="text-sm leading-relaxed text-ink/65">
-              Tap below to book an appointment instantly. You can confirm on WhatsApp or open the booking page for the full form.
-            </DialogDescription>
-          </DialogHeader>
+        <DialogContent className="sm:max-w-sm p-0 rounded-3xl border-0 bg-transparent shadow-2xl overflow-hidden [&>button]:hidden">
+          {/* Gradient header banner */}
+          <div className="relative bg-gradient-to-br from-royal via-bright to-[#4f9cf9] px-6 pt-7 pb-8">
+            {/* Close button */}
+            <button
+              onClick={() => setBookingOpen(false)}
+              className="absolute top-3 right-3 size-7 rounded-full bg-white/20 hover:bg-white/35 flex items-center justify-center transition-colors"
+              aria-label="Close"
+            >
+              <X className="size-3.5 text-white" />
+            </button>
 
-          <div className="grid gap-3 rounded-2xl bg-ice p-4 border border-royal/5">
-            <p className="text-sm text-ink/70">
-              Fastest options:
+            {/* Icon badge */}
+            <div className="size-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 shadow-inner">
+              <CalendarDays className="size-6 text-white" />
+            </div>
+
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70 mb-1">
+              Chhaya Clinic &amp; Dental Care
             </p>
-            <ul className="space-y-2 text-sm text-ink/70">
-              <li>• WhatsApp confirmation with the clinic team</li>
-              <li>• Full appointment form on the booking page</li>
-            </ul>
+            <h2 className="text-2xl font-display font-bold text-white leading-snug">
+              Book Your Dental Visit
+            </h2>
+            <p className="mt-2 text-sm text-white/80 leading-relaxed">
+              Get confirmed in minutes — choose your preferred way to book.
+            </p>
+
+            {/* Decorative circle */}
+            <div className="absolute -bottom-6 -right-6 size-24 rounded-full bg-white/10 pointer-events-none" />
+            <div className="absolute -top-4 -left-4 size-16 rounded-full bg-white/10 pointer-events-none" />
           </div>
 
-          <DialogFooter className="sm:justify-start gap-3 mt-2">
-            <a
-              href="https://wa.me/919921498104?text=Hi%20Chhaya%20Clinic%2C%20I%27d%20like%20to%20book%20an%20appointment"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-success text-white font-semibold shadow-[0_12px_30px_rgba(34,197,94,0.25)] hover:-translate-y-0.5 transition-all"
-            >
-              <Phone className="size-4" />
-              Book on WhatsApp
-            </a>
-            <Link
-              to="/booking"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-royal text-ice font-semibold hover:bg-bright transition-colors"
-            >
-              <CalendarDays className="size-4" />
-              Open Booking Page
-            </Link>
-          </DialogFooter>
+          {/* White card body */}
+          <div className="bg-white px-6 pt-6 pb-6">
+            {/* Feature bullets */}
+            <div className="space-y-2.5 mb-6">
+              {[
+                "Instant WhatsApp confirmation with our team",
+                "Full appointment form with date & time selection",
+              ].map((text) => (
+                <div key={text} className="flex items-start gap-3">
+                  <CheckCircle2 className="size-4 text-bright mt-0.5 shrink-0" />
+                  <span className="text-sm text-ink/75 leading-snug">{text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA buttons */}
+            <div className="flex flex-col gap-3">
+              <a
+                href="https://wa.me/919921498104?text=Hi%20Chhaya%20Clinic%2C%20I%27d%20like%20to%20book%20an%20appointment"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-2xl bg-[#22c55e] text-white font-semibold text-sm shadow-[0_8px_24px_rgba(34,197,94,0.35)] hover:shadow-[0_12px_32px_rgba(34,197,94,0.45)] hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <Phone className="size-4" />
+                Book on WhatsApp
+              </a>
+              <Link
+                to="/booking"
+                onClick={() => setBookingOpen(false)}
+                className="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-2xl bg-royal text-white font-semibold text-sm shadow-[0_8px_24px_rgba(37,71,197,0.25)] hover:shadow-[0_12px_32px_rgba(37,71,197,0.4)] hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <CalendarDays className="size-4" />
+                Open Booking Page
+              </Link>
+            </div>
+
+            {/* Trust note */}
+            <p className="text-center text-[11px] text-ink/40 mt-4">
+              No spam · Free consultation · Same-day slots available
+            </p>
+          </div>
         </DialogContent>
       </Dialog>
 

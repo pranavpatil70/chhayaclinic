@@ -9,11 +9,12 @@ import {
 } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
 import doctorAruna from "@/assets/Dr. Rakhi Sabale.png";
-import doctorPawar from "@/assets/Dr. Pawar.jpeg";
+import doctorPawar from "@/assets/Dr. Pawar.png";
 import doctorVijay from "@/assets/Dr. Vijay Ganesh.jpeg";
 import doctorShantanu from "@/assets/shantanu harale.png";
 import doctorDnyanesh from "@/assets/Dr. Dhnyaneshwar Chitte.png";
 import doctorGangasagar from "@/assets/dr. Gangasagar Swati Gangadhar.png";
+import doctorMaya from "@/assets/Dr. Maya.png";
 
 export const Route = createFileRoute("/doctors")({
   head: () => ({
@@ -39,7 +40,7 @@ const ALL_DOCTORS = [
     name: "Dr. Rakhi Mahesh Sabale",
     role: "Chief Dentist & Clinical Director",
     qual:
-      "B.D.S (M.U.H.S). Clinical Director with a focus on restorative dentistry, implants and smile rehabilitation. Registered with Maharashtra State Dental Council.",
+      "B.D.S. Clinical Director with a focus on restorative dentistry, implants and smile rehabilitation. Registered with Maharashtra State Dental Council.",
     photo: doctorAruna,
     // tall narrow portrait — face sits in top 10%; pull crop window to the very top
     photoPosition: "object-[50%_5%]",
@@ -90,8 +91,8 @@ const ALL_DOCTORS = [
     name: "Dr. Maya Uddhavrao Shinde",
     role: "Pedodontist",
     qual: "B.D.S — Bharati Vidyapeeth Dental College and Hospital, Pune; M.D.S — Pediatric Dentistry (Pass out 2022). Reg. A-38558. Registered with Maharashtra State Dental Council.",
-    photo: doctorAruna,
-    photoPosition: "object-[50%_5%]",
+    photo: doctorMaya,
+    photoPosition: "object-[50%_10%]",
     years: 4,
     specialties: ["Pediatric Dentistry", "Behavior Management"],
     languages: ["English", "Hindi", "Marathi"],

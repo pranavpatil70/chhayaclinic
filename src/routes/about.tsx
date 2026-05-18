@@ -120,7 +120,7 @@ function AboutPage() {
               </Link>
               <Link
                 to="/doctors"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-ice hover:bg-ice/10 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-light text-ink hover:bg-ink/5 transition-colors"
               >
                 Meet our doctors
               </Link>
@@ -349,16 +349,16 @@ function AboutPage() {
               </div>
             </div>
             <div className="lg:col-span-8 relative">
-              <Quote className="size-7 text-sky/60" />
-              <p className="mt-4 font-display text-2xl lg:text-3xl font-light leading-snug text-ice text-balance">
+              <Quote className="size-7 text-bright/60" />
+              <p className="mt-4 font-display text-2xl lg:text-3xl font-light leading-snug text-ink text-balance">
                 "Every patient is someone's mother, child, or grandparent. We
                 treat them the way we'd want our own family treated — gently,
                 honestly, and with the best technology we can offer."
               </p>
               <div className="mt-6">
-                <p className="font-semibold text-ice">DR. RAKHI SABALE</p>
-                <p className="text-xs text-ice/50 uppercase tracking-widest">
-                  Founder · B.D.S (M.U.H.S) · 12 years experience
+                <p className="font-semibold text-ink">DR. RAKHI SABALE</p>
+                <p className="text-xs text-ink/50 uppercase tracking-widest">
+                  Founder · B.D.S · 12 years experience
                 </p>
               </div>
             </div>
