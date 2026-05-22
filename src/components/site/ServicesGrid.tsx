@@ -11,7 +11,7 @@ import crownBridgeImg from "@/assets/dental crowns and  bridges.webp";
 import implantImg from "@/assets/Implants.webp";
 import wisdomToothImg from "@/assets/wisdom tooth.webp";
 import orthodonticsImg from "@/assets/orthodonist.webp";
-import kidsDentistryImg from "@/assets/gallery-kid.jpg";
+import pediatricBoyImg from "@/assets/pediatric-boy.png";
 
 type Filter = ServiceCategory | "all";
 
@@ -32,7 +32,7 @@ const serviceImages: Record<string, string> = {
   aligners:                  orthodonticsImg,
   "wisdom-tooth":            wisdomToothImg,
   "gum-treatment":           U("photo-1606811951341-756fdd437682"),
-  "kids-dentistry":          kidsDentistryImg,
+  "kids-dentistry":          pediatricBoyImg,
   "fluoride-sealants":       U("photo-1606811841689-23dfddce3e95"),
   dentures:                  U("photo-1620775997990-ee3c25938b4c"),
   "digital-xray":            U("photo-1522849696084-818b29dfe210"),

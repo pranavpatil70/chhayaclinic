@@ -17,7 +17,7 @@ import crownBridgeImg from "../../assets/dental crowns and  bridges.webp";
 import scalingPolishingImg from "../../assets/checkup  and cleaning.webp";
 import wisdomToothImg from "../../assets/wisdom tooth.webp";
 import orthodonticsImg from "../../assets/orthodonist.webp";
-import kidsDentistryImg from "../../assets/gallery-kid.jpg";
+import pediatricBoyImg from "../../assets/pediatric-boy.png";
 import { SERVICES } from "@/data/services";
 
 const services = [
@@ -84,7 +84,7 @@ const services = [
     desc: "Gentle, child-friendly dental care including fluoride treatment, sealants and habit counselling.",
     price: "₹500",
     duration: "30 min",
-    image: kidsDentistryImg,
+    image: pediatricBoyImg,
   },
 ];
 
