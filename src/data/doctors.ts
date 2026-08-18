@@ -70,7 +70,7 @@ export const ALL_DOCTORS = [
     bio: "Child-friendly dentist focused on preventive care and early intervention.",
   },
   {
-    name: "Dr. Swati Gangadhar Gangasagare",
+    name: "Dr. Swati Gangadhar Gangasagre",
     role: "Associate Dentist",
     qual:
       "B.D.S — Aditya Dental College, Beed (Pass out 2025). Reg. 229891. Registered with Maharashtra State Dental Council.",
